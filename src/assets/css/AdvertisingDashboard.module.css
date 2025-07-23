@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+.background {
+  position: absolute;
+  inset: 0;
+  background: url('src/assets/img/avatar.png') center/cover no-repeat;
+  filter: blur(10px);         /* вот он — реальный блюр фона */
+  transform: scale(1.1);       /* чуть увеличим, чтобы не было краёв */
+  z-index: 0;
+}
+
+
+.blur {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);  /* полупрозрачная тень */
+  z-index: 1;
+}
+
+
+
+
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: #0d0d0d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: white;
+}
+
+.blur {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #7c3aed33, #ec489933, transparent);
+  filter: blur(140px);
+  z-index: 0;
+}
+
+.container {
+  z-index: 1;
+  text-align: center;
+  max-width: 1000px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  /* оставляем прежние отступы */
+  margin-bottom: 3rem;
+  /* добавим лёгкий полупрозрачный фон-«плашку» */
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 900;
+  background: linear-gradient(to right, #bb3ec7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  /* усиленная тень для чёткости */
+  /* text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8), 
+               0 0 12px rgba(77, 86, 212, 0.4); */
+}
+
+.description {
+  font-size: 1.25rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  /* белый текст с лёгкой тенью */
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.cta {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  border-radius: 9999px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  /* свечение вокруг кнопки */
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.6), 
+              0 0 20px rgba(236, 72, 153, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.8), 
+              0 0 30px rgba(236, 72, 153, 0.6);
+}
+
+.showcase {
+  max-width: 100%;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
+}
